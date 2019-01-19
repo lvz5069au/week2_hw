@@ -4,8 +4,6 @@
 import os	
 from os.path import join, getsize, isdir
 
-DIR = 4096 # size of empty directory
-
 
 def getSize(dir):
 	'''
@@ -16,7 +14,6 @@ def getSize(dir):
 	if dlist != []: # if dir is empty, skip
 		for d in dlist:
 			if isdir(join(dir,d)): # if elem in list is dir
-				total += DIR # include the dir size 4096 bytes
 				total += getSize(join(dir,d)) # use recursion to get the size of sub-dir
 			else:
 				total += getsize(join(dir,d)) # if elem is file, add to total
@@ -24,6 +21,17 @@ def getSize(dir):
 	return total
 
 
-path = os.getcwd()
-result = getSize(path)
-print("Total size of current dir is: {} bytes.".format(result))
+# path = os.getcwd()
+
+# use a while loop to check if the user enter wrong 
+# allow the user to enter again until the correct value is calculated
+foo = True
+while foo == True:
+	try:
+		path = str(input("Enter the dir path: "))
+		result = getSize(path)
+		print("Total size of current dir is: {} bytes.".format(result))
+		foo = False
+	except FileNotFoundError:
+		print("Please enter a dir path correctly....")
+		foo = True
