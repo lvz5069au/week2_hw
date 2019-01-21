@@ -1,3 +1,6 @@
+# Written by Lingzhi Zhang
+# airplane war game
+
 #导入相应的模块
 import pygame
 from pygame.locals import *
@@ -193,7 +196,7 @@ def main():
 		for em in enemylist:
 			em.display()
 
-			if running == True:
+			if running == True: # if hero dies enermy should not fire anymore
 				if random.choice(range(60)) == 0:
 					enermy_bullet_list.append(EnermyBullet(screen, em.x, em.y))
 			if em.move(hero):
