@@ -3,6 +3,54 @@
   <component name="ChangeListManager">
     <list default="true" id="702e5dfe-742e-4bc6-bc53-d53b6b32f015" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/bg_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/explode2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/explosion.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/go.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/num.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/026.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/Bird.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/Clock.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/Fairy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/bomb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/eshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/f1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/f2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/fish_orange.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/forest14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/girl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/green.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/hero.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/man.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/map.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/mario.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/orange.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/p1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/p2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/p3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/p4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/p5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/pic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/red.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/sh.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/sonic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/star.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/tank.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/tiled1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/tiled2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/trans_girl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/tree.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/xp_start.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/z1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/z5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/res3/z6.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,15 +59,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/plane_war$game.coverage" NAME="game Coverage Results" MODIFIED="1548051654439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/plane_war$game.coverage" NAME="game Coverage Results" MODIFIED="1548068179947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="212" column="28" selection-start-line="212" selection-start-column="28" selection-end-line="212" selection-end-column="28" />
+            <state relative-caret-position="1053">
+              <caret line="147" column="35" lean-forward="true" selection-start-line="147" selection-start-column="35" selection-end-line="147" selection-end-column="35" />
               <folding>
                 <element signature="e#9#22#0" expanded="true" />
               </folding>
@@ -50,7 +98,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -62,6 +109,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -123,36 +171,38 @@
       <option name="presentableId" value="Default" />
       <updated>1548043680702</updated>
       <workItem from="1548043682561" duration="7718000" />
+      <workItem from="1548068031980" duration="1222000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7718000" />
+    <option name="totallyTimeSpent" value="8940000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12082262" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12210797" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.21938089" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21938089" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="SciView" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,8 +211,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="212" column="28" selection-start-line="212" selection-start-column="28" selection-end-line="212" selection-end-column="28" />
+        <state relative-caret-position="1053">
+          <caret line="147" column="35" lean-forward="true" selection-start-line="147" selection-start-column="35" selection-end-line="147" selection-end-column="35" />
           <folding>
             <element signature="e#9#22#0" expanded="true" />
           </folding>

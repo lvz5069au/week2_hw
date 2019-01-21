@@ -10,9 +10,9 @@ class HeroPlane:
 		self.y = 400
 		self.screen = screen_temp
 		self.image = pygame.image.load("./images/me.png")
-		self.explode  =pygame.image.load("./images/4.png")
+		self.explode  =pygame.image.load("./images/4.png") # for displaying explosion
 		self.bullet_list = [] #用于存放玩家的子弹列表
-		self.hit = False
+		self.hit = False # if hero is hit by enermy bullet
 
 	def display(self):
 		'''绘制玩家飞机'''
@@ -21,15 +21,15 @@ class HeroPlane:
 			b.display()
 			if b.move():
 				self.bullet_list.remove(b)
+		# if hit display explosion if not then keep displaying plane
 		if self.hit == True:
 			self.screen.blit(self.explode, (self.x, self.y))
 		else:
 			self.screen.blit(self.image,(self.x,self.y))
-		
-	
+
 	def move_left(self):
 		'''左移动飞机'''
-		if self.hit == False:
+		if self.hit == False: # if hero dies, keyboard cannot control
 			self.x -= 5
 			if self.x <= 0:
 				self.x=0
@@ -48,10 +48,9 @@ class HeroPlane:
 				return True
 
 	def fire(self):
-		if self.hit == False:
+		if self.hit == False: # if hero dies cannot fire
 			self.bullet_list.append(Bullet(self.screen,self.x,self.y))
 			print(len(self.bullet_list))
-
 
 class Bullet:
 	'''子弹类'''
@@ -67,7 +66,7 @@ class Bullet:
 	
 	def move(self):
 		self.y -= 10
-		if self.y <=-20:
+		if self.y <=-20: # make sure not crossing the boarder
 			return True
 
 class EnemyPlane:
@@ -77,7 +76,7 @@ class EnemyPlane:
 		self.y = -75
 		self.screen = screen_temp
 		self.image = pygame.image.load("./images/e"+str(random.choice(range(3)))+".png")
-		self.explode = pygame.image.load("./images/4.png")
+		self.explode = pygame.image.load("./images/4.png") # if got hit then explode
 		self.bullet_list  = []
 		self.dead = False
 
@@ -86,7 +85,7 @@ class EnemyPlane:
 		if self.dead == False:
 			self.screen.blit(self.image,(self.x,self.y))
 		else:
-			self.screen.blit(self.explode, (self.x, self.y))
+			self.screen.blit(self.explode, (self.x, self.y)) # if dies display explosion
 		for b in self.bullet_list:
 			b.display()
 			b.move()
@@ -103,12 +102,6 @@ class EnemyPlane:
 				hero.bullet_list.remove(bo)
 				return True
 
-	# def fire(self):
-	# 	random_bullet = random.randint(1,100)
-	# 	if random_bullet == 9 or random_bullet == 22:
-	# 		self.bullet_list.append(EnermyBullet(self.screen,self.x,self.y))
-	# 		print(len(self.bullet_list))
-
 class EnermyBullet:
 	def __init__(self,screen_temp,x,y):
 		self.x = x + 53
@@ -119,14 +112,10 @@ class EnermyBullet:
 	def display(self):
 		self.screen.blit(self.image,(self.x,self.y))
 
-
 	def move(self):
 		self.y+= 5
 		if self.y> (568 + 20):
 			return True
-
-
-
 
 def key_control(hero_temp):
 	'''键盘控制函数'''
@@ -152,7 +141,10 @@ def key_control(hero_temp):
 		print("space...")
 		hero_temp.fire()
 
+
 class Over:
+	'''define a class to display the game over symbol '''
+
 	def __init__(self,screen_temp):
 		self.x = 200
 		self.y = 400
@@ -181,25 +173,21 @@ def main():
 	enermy_bullet_list = []
 
 	while True:
-		# if running == True:
 		#绘制画面
 		screen.blit(background,(0,m))
 		m+=2
 		if m>=-200:
 			m = -968
 
-		# if running == True:
 		#绘制玩家飞机
 		hero.display()
 
 		#执行键盘控制
 		key_control(hero)
 
-
 		#随机绘制敌机
 		if random.choice(range(50))==10:
 			enemylist.append(EnemyPlane(screen))
-
 
 		#遍历敌机并绘制移动
 		for em in enemylist:
@@ -217,6 +205,7 @@ def main():
 				print("the player is dead game over ")
 				running = False
 
+		# make sure the bullet is still moving even after the enermy planes got hit
 		for eb in enermy_bullet_list:
 			eb.display()
 			if hero.x + 12 < eb.x + 1 < hero.x +94 and hero.y + 12 < eb.y + 17 < hero.y + 32:
@@ -224,7 +213,7 @@ def main():
 				running = False
 			eb.move()
 
-
+		# if hero is hit
 		if running == False:
 			hero.hit = True
 			dead.display()
@@ -233,11 +222,7 @@ def main():
 		pygame.display.update()
 
 		#定时显示
-		time.sleep(0.04)
-
-
-
-
+		time.sleep(0.015) # 0.04 is too slow
 
 #判断当前是否是主运行程序，并调用
 if __name__ == "__main__":
