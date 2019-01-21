@@ -10,8 +10,9 @@ class HeroPlane:
 		self.y = 400
 		self.screen = screen_temp
 		self.image = pygame.image.load("./images/me.png")
+		self.explode  =pygame.image.load("./images/4.png")
 		self.bullet_list = [] #用于存放玩家的子弹列表
-		# self.is_hit = False
+		self.hit = False
 
 	def display(self):
 		'''绘制玩家飞机'''
@@ -20,20 +21,25 @@ class HeroPlane:
 			b.display()
 			if b.move():
 				self.bullet_list.remove(b)
-		self.screen.blit(self.image,(self.x,self.y))
+		if self.hit == True:
+			self.screen.blit(self.explode, (self.x, self.y))
+		else:
+			self.screen.blit(self.image,(self.x,self.y))
 		
 	
 	def move_left(self):
 		'''左移动飞机'''
-		self.x -= 5
-		if self.x <= 0:
-			self.x=0
+		if self.hit == False:
+			self.x -= 5
+			if self.x <= 0:
+				self.x=0
 
 	def move_right(self):
 		'''右移动飞机'''
-		self.x += 5
-		if self.x>=406:
-			self.x=406
+		if self.hit == False:
+			self.x += 5
+			if self.x>=406:
+				self.x=406
 
 	def is_hit(self,enermy):
 		for bo in enermy.bullet_list:
@@ -42,8 +48,10 @@ class HeroPlane:
 				return True
 
 	def fire(self):
-		self.bullet_list.append(Bullet(self.screen,self.x,self.y))
-		print(len(self.bullet_list))
+		if self.hit == False:
+			self.bullet_list.append(Bullet(self.screen,self.x,self.y))
+			print(len(self.bullet_list))
+
 
 class Bullet:
 	'''子弹类'''
@@ -69,11 +77,16 @@ class EnemyPlane:
 		self.y = -75
 		self.screen = screen_temp
 		self.image = pygame.image.load("./images/e"+str(random.choice(range(3)))+".png")
+		self.explode = pygame.image.load("./images/4.png")
 		self.bullet_list  = []
+		self.dead = False
 
 	def display(self):
 		'''绘制敌机'''
-		self.screen.blit(self.image,(self.x,self.y))
+		if self.dead == False:
+			self.screen.blit(self.image,(self.x,self.y))
+		else:
+			self.screen.blit(self.explode, (self.x, self.y))
 		for b in self.bullet_list:
 			b.display()
 			b.move()
@@ -90,11 +103,11 @@ class EnemyPlane:
 				hero.bullet_list.remove(bo)
 				return True
 
-	def fire(self):
-		random_bullet = random.randint(1,100)
-		if random_bullet == 9 or random_bullet == 22:
-			self.bullet_list.append(EnermyBullet(self.screen,self.x,self.y))
-			print(len(self.bullet_list))
+	# def fire(self):
+	# 	random_bullet = random.randint(1,100)
+	# 	if random_bullet == 9 or random_bullet == 22:
+	# 		self.bullet_list.append(EnermyBullet(self.screen,self.x,self.y))
+	# 		print(len(self.bullet_list))
 
 class EnermyBullet:
 	def __init__(self,screen_temp,x,y):
@@ -139,7 +152,15 @@ def key_control(hero_temp):
 		print("space...")
 		hero_temp.fire()
 
+class Over:
+	def __init__(self,screen_temp):
+		self.x = 200
+		self.y = 400
+		self.screen = screen_temp
+		self.image = pygame.image.load("./images/go.png")
 
+	def display(self):
+		self.screen.blit(self.image, (self.x, self.y))
 
 def main():
 	'''主程序函数 '''
@@ -153,42 +174,61 @@ def main():
 	# 创建玩家飞机（英雄）
 	hero = HeroPlane(screen)
 
+	dead = Over(screen)
+
 	m = -968
 	enemylist = [] #存放敌机的列表
+	enermy_bullet_list = []
 
 	while True:
-
+		# if running == True:
 		#绘制画面
 		screen.blit(background,(0,m))
 		m+=2
 		if m>=-200:
 			m = -968
 
-		if running == True:
-			#绘制玩家飞机
-			hero.display()
-		
-			#执行键盘控制
-			key_control(hero)
+		# if running == True:
+		#绘制玩家飞机
+		hero.display()
+
+		#执行键盘控制
+		key_control(hero)
+
 
 		#随机绘制敌机
 		if random.choice(range(50))==10:
 			enemylist.append(EnemyPlane(screen))
+
+
 		#遍历敌机并绘制移动
 		for em in enemylist:
 			em.display()
-			# if running == True:
-			em.fire()
+
+			if running == True:
+				if random.choice(range(60)) == 0:
+					enermy_bullet_list.append(EnermyBullet(screen, em.x, em.y))
 			if em.move(hero):
+				em.dead = True
+				em.display()
 				enemylist.remove(em)
 
 			if hero.is_hit(em):
-				print("the palyer is dead game over ")
-				# running = False
-			
-				
-		
-		
+				print("the player is dead game over ")
+				running = False
+
+		for eb in enermy_bullet_list:
+			eb.display()
+			if hero.x + 12 < eb.x + 1 < hero.x +94 and hero.y + 12 < eb.y + 17 < hero.y + 32:
+				enermy_bullet_list.remove(eb)
+				running = False
+			eb.move()
+
+
+		if running == False:
+			hero.hit = True
+			dead.display()
+
 		#更新显示
 		pygame.display.update()
 
